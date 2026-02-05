@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Prachi ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .hearts-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: rgba(255, 182, 193, 0.6);
+            animation: float 10s infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 60px 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .big-heart {
+            font-size: 80px;
+            color: #ff6b9d;
+            animation: heartbeat 1.5s infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            10%, 30% {
+                transform: scale(1.1);
+            }
+            20%, 40% {
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #ff6b9d;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .from {
+            font-size: 20px;
+            color: #764ba2;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .message {
+            font-size: 22px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .question {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff6b9d;
+            margin: 40px 0 30px 0;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .yes-btn {
+            background: linear-gradient(135deg, #ff6b9d, #ff8fab);
+            color: white;
+        }
+
+        .yes-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
+        }
+
+        .no-btn {
+            background: #ddd;
+            color: #666;
+            position: relative;
+        }
+
+        .no-btn:hover {
+            transform: scale(0.9);
+        }
+
+        .celebration {
+            display: none;
+            text-align: center;
+        }
+
+        .celebration.show {
+            display: block;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .celebration h2 {
+            font-size: 48px;
+            color: #ff6b9d;
+            margin-bottom: 20px;
+        }
+
+        .celebration p {
+            font-size: 24px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .couple-photo {
+            margin: 30px 0;
+            animation: fadeInScale 1.5s ease-in;
+        }
+
+        .couple-photo img {
+            max-width: 100%;
+            width: 400px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 5px solid #ff6b9d;
+        }
+
+        .couple-photo-proposal {
+            margin: 0 0 30px 0;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .couple-photo-proposal img {
+            max-width: 100%;
+            width: 350px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 4px solid #ff6b9d;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.5) rotate(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .firework {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        @keyframes firework {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1) rotate(180deg);
+                opacity: 0;
+            }
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ffd700;
+            border-radius: 50%;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 36px;
+            }
+            
+            .message {
+                font-size: 18px;
+            }
+            
+            .question {
+                font-size: 24px;
+            }
+            
+            button {
+                padding: 12px 30px;
+                font-size: 18px;
+            }
+
+            .couple-photo img,
+            .couple-photo-proposal img {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts-background" id="heartsBackground"></div>
+    
+    <div class="container">
+        <div class="card">
+            <div class="big-heart">❤️</div>
+            <h1>Dear Prachi</h1>
+            <div class="from">From Dheeraj, with all my love</div>
+            
+            <div id="mainContent">
+                <div class="couple-photo-proposal">
+                    <img src="couple_photo.jpg" alt="Us Together">
+                </div>
+                
+                <div class="message">
+                    Every moment with you feels like a dream come true. Your smile lights up my world, and your laughter is my favorite melody. You make every day special just by being you.
+                    <br><br>
+                    This Valentine's Day, I want to make something clear...
+                </div>
+                
+                <div class="question">Will you be my Valentine? 💕</div>
+                
+                <div class="buttons">
+                    <button class="yes-btn" onclick="handleYes()">Yes! 💖</button>
+                    <button class="no-btn" id="noBtn" onmouseover="moveButton()" onclick="handleNo()">No</button>
+                </div>
+            </div>
+            
+            <div id="celebration" class="celebration">
+                <h2>🎉 Yay! 🎉</h2>
+                <div class="big-heart">💕</div>
+                <div class="couple-photo">
+                    <img src="couple_photo.jpg" alt="Us Together" id="coupleImage">
+                </div>
+                <p>
+                    You've made me the happiest person alive!<br><br>
+                    I promise to always cherish you, make you smile, and be there for you through everything.
+                    <br><br>
+                    Happy Valentine's Day, my love! ❤️
+                    <br><br>
+                    Forever yours,<br>
+                    <strong>Dheeraj</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create floating hearts
+        function createHeart() {
+            const heartsContainer = document.getElementById('heartsBackground');
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 5 + 8) + 's';
+            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            heartsContainer.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 15000);
+        }
+
+        // Create hearts periodically
+        setInterval(createHeart, 300);
+        for(let i = 0; i < 15; i++) {
+            setTimeout(createHeart, i * 200);
+        }
+
+        // Move "No" button away on hover
+        function moveButton() {
+            const noBtn = document.getElementById('noBtn');
+            const maxX = window.innerWidth - noBtn.offsetWidth - 100;
+            const maxY = window.innerHeight - noBtn.offsetHeight - 100;
+            
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+            
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        }
+
+        // Handle No button click (just in case)
+        function handleNo() {
+            alert("The 'No' button is just for fun! 😊 I hope you'll say yes! 💕");
+        }
+
+        // Handle Yes button
+        function handleYes() {
+            document.getElementById('mainContent').style.display = 'none';
+            document.getElementById('celebration').classList.add('show');
+            
+            // Create fireworks effect
+            for(let i = 0; i < 30; i++) {
+                setTimeout(() => createFirework(), i * 100);
+            }
+            
+            // Play celebration
+            celebrate();
+        }
+
+        function createFirework() {
+            const colors = ['#ff6b9d', '#ffd700', '#ff1493', '#ff69b4', '#da70d6'];
+            const firework = document.createElement('div');
+            firework.className = 'firework';
+            firework.style.left = Math.random() * window.innerWidth + 'px';
+            firework.style.top = Math.random() * window.innerHeight + 'px';
+            
+            for(let i = 0; i < 12; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                const angle = (Math.PI * 2 * i) / 12;
+                const velocity = 100;
+                sparkle.style.left = Math.cos(angle) * velocity + 'px';
+                sparkle.style.top = Math.sin(angle) * velocity + 'px';
+                sparkle.style.animation = 'firework 1s ease-out';
+                firework.appendChild(sparkle);
+            }
+            
+            document.body.appendChild(firework);
+            setTimeout(() => firework.remove(), 1000);
+        }
+
+        function celebrate() {
+            // Change background gradient
+            document.body.style.background = 'linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%)';
+            
+            // Create more hearts
+            for(let i = 0; i < 50; i++) {
+                setTimeout(createHeart, i * 50);
+            }
+        }
+    </script>
+</body>
+</html>
